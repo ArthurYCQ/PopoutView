@@ -15,7 +15,7 @@ public struct PopoutView<Header: View, Content: View>: View {
     
     public init(
         @ViewBuilder header: @escaping (Bool) -> Header,
-        @ViewBuilder content: @escaping (Bool) -> Content,
+        @ViewBuilder content: @escaping (Bool) -> Content
     ) {
         self.header = header
         self.content = content
