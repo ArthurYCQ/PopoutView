@@ -12,6 +12,15 @@ public struct PopoutView<Header: View, Content: View>: View {
     @State private var showFullScreenCover: Bool = false
     @State private var animateView: Bool = false
     @State private var haptics: Bool = false
+    
+    public init(
+        @ViewBuilder header: @escaping (Bool) -> Header,
+        @ViewBuilder content: @escaping (Bool) -> Content,
+    ) {
+        self.header = header
+        self.content = content
+    }
+    
     public var body: some View {
         header(animateView)
             .background(solidBackground(.gray, opacity: 0.1))
